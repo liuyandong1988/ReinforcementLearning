@@ -8,3 +8,10 @@
 直接优化策略。SPG，用蒙特卡洛方法评价策略的好坏，需要完整的episode。改进的Actor-Critic每训练一步用Qvalue评价策略的好坏，样本使用率低。OPP进一步改进，N-step思想结合importance sample评价策略。以上三种方法都是把critic的值作为策略梯度的权重，更新Actor网络的。DDPG也是A-C架构，但思路完全不同。DDPG以DQN为核心作为Critic，但网络的输入不仅是环境状态，还有Actor得到的行为。大大提升了样本的利用率。分布式的方法是提升样本利用率的另一思路，A3C和DOPP分别是对Actor-critc和OPP算法的分布式处理。
 
 [![JfdHOI.png](https://s1.ax1x.com/2020/04/27/JfdHOI.png)](https://imgchr.com/i/JfdHOI)
+
+
+## 环境
+tensorflow 2.1.0
+tensorflow-probability 0.9.0
+tensorlayer 2.2.1
+gym 0.17.1
